@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Pokémon App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **[Ver la aplicación en Vercel](https://pokemon-app-seven-weld.vercel.app/)** 🚀
 
-Currently, two official plugins are available:
+## 📝 Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Pokémon App** es una aplicación desarrollada con React que permite a los usuarios explorar y calificar diferentes Pokémon. Los usuarios pueden buscar Pokémon, ver detalles individuales y asignarles una calificación basada en su preferencia.
 
-## Expanding the ESLint configuration
+## ✨ Características
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 🔍 **Explorar Pokémon**: Lista completa de Pokémon obtenida desde la API de PokéAPI con paginación.
+- 🕵️ **Búsqueda en tiempo real**: Encuentra Pokémon fácilmente con un campo de búsqueda optimizado con `debounce`.
+- ⭐ **Calificación de Pokémon**: Asigna y guarda calificaciones personalizadas.
+- 📊 **Gráficos interactivos**: Representación visual de datos con **Recharts**.
+- ⚡ **Rendimiento optimizado**: Desarrollado con **Vite** para una carga ultrarrápida.
+- 🎨 **Interfaz moderna y accesible**: Diseño responsivo con **Chakra UI**.
+- 🌎 **Desplegado en Vercel**: Disponible online sin necesidad de configuración adicional.
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠 Tecnologías Utilizadas
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ⚡ **Vite** → Bundler ultrarrápido para React.
+- ⚛️ **React** → Biblioteca principal para la interfaz de usuario.
+- 📊 **Recharts** → Generación de gráficos interactivos.
+- 🎨 **Chakra UI** → Librería de componentes para una UI moderna y accesible.
+- 🔄 **React Router** → Manejo de rutas dentro de la aplicación.
+- 📡 **Axios** → Cliente HTTP para obtener datos de la API.
+- 🛑 **Lodash** → Utilidades para optimizar el código.
+- 🔍 **TypeScript** → Mejora en la calidad del código con tipado estático.
+- ☁️ **Vercel** → Hosting de alto rendimiento para la aplicación.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🚀 Instalación y Configuración
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clona el repositorio**:
+
+   ```bash
+   git clone https://github.com/torre-micaela/pokemon-app.git
+   ```
+2. **Instalar dependencias**:
+
+   ```bash
+   npm i
+   ```
+3. **Levantar el proyecto en local (con vite)**:
+
+   ```bash
+   npm run dev
+   ```
+ 
+   ![Pokémon App](https://i.postimg.cc/bNTsb8qK/pokeball.png)
+
