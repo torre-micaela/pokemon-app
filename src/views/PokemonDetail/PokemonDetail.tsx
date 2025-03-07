@@ -26,32 +26,39 @@ const PokemonDetail = () => {
       <Header />
 
       <Flex p={2} justifyContent="center">
-        {isLoading && <SkeletonCard />}
-        <Card
-          name={data?.name}
-          image={
-            data?.sprites?.front_default ||
-            "https://i.postimg.cc/bNTsb8qK/pokeball.png"
-          }
-          styles={{ minHeight: 500 }}
-        >
-          <Text>Height: {data?.height}</Text>
-          <Text>Weight: {data?.weight}</Text>
-          <Text>
-            Types:{" "}
-            {data?.types?.map((t: PokemonType) => t.type.name).join(", ")}
-          </Text>
-          <Text>Abilities:</Text>
-          <Wrap gap={2}>
-            {data?.abilities?.map((a: PokemonAbility, index: number) => (
-              <WrapItem key={index}>
-                <Badge p={2} colorPalette={color || "green"} borderRadius="lg">
-                  <FaStar style={{ marginRight: "4px" }} /> {a.ability.name}
-                </Badge>
-              </WrapItem>
-            ))}
-          </Wrap>
-        </Card>
+        {isLoading ? (
+          <SkeletonCard />
+        ) : (
+          <Card
+            name={data?.name}
+            image={
+              data?.sprites?.front_default ||
+              "https://i.postimg.cc/bNTsb8qK/pokeball.png"
+            }
+            styles={{ minHeight: 500 }}
+          >
+            <Text>Height: {data?.height}</Text>
+            <Text>Weight: {data?.weight}</Text>
+            <Text>
+              Types:{" "}
+              {data?.types?.map((t: PokemonType) => t.type.name).join(", ")}
+            </Text>
+            <Text>Abilities:</Text>
+            <Wrap gap={2}>
+              {data?.abilities?.map((a: PokemonAbility, index: number) => (
+                <WrapItem key={index}>
+                  <Badge
+                    p={2}
+                    colorPalette={color || "green"}
+                    borderRadius="lg"
+                  >
+                    <FaStar style={{ marginRight: "4px" }} /> {a.ability.name}
+                  </Badge>
+                </WrapItem>
+              ))}
+            </Wrap>
+          </Card>
+        )}
       </Flex>
     </Flex>
   );
